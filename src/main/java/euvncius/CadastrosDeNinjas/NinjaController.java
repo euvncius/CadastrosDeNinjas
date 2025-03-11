@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController //mesmo do rest API
 @RequestMapping //precisa sempre, para fazer o mapeamento do site
-public class Controller {
+public class NinjaController {
 
     @GetMapping("/boasvindas") //boas praticas colocar um barra antes
     public String boasVindas(){
