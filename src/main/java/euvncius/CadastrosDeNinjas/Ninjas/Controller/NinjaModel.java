@@ -1,4 +1,4 @@
-package euvncius.CadastrosDeNinjas;
+package euvncius.CadastrosDeNinjas.Ninjas.Controller;
 
 import jakarta.persistence.*;
 
@@ -11,10 +11,17 @@ public class NinjaModel {
     @Id //para falar que a primeira variavel é com quem ele vai trabalhar
     @GeneratedValue(strategy = GenerationType.IDENTITY) //para dar referencia do numero que ele vai começar, uma estrategia
     private Long id;
-    private String nome;
-    private String email;
-    private     int idade;
 
+    private String nome;
+
+    private String email;
+
+    private int idade;
+
+    // @ManyToOne = um ninja tem uma unica missao
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") //chave extrangeira (Foreing Key)
+    private MissoesModel missoes;
 
     public NinjaModel() {
 
